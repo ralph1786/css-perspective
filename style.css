@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Spirax|Roboto");
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Spirax", cursive;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+ul {
+  list-style-type: none;
+  perspective: 1000px;
+}
+
+ul li {
+  display: grid;
+  grid-template-columns: 20% auto;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transform: rotateY(-30deg) rotateX(15deg);
+  position: absolute;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+  mix-blend-mode: multiply;
+}
+
+ul li:nth-child(1) {
+  background: rgb(207, 207, 255);
+  top: -105px;
+  z-index: 2;
+}
+
+ul li:nth-child(2) {
+  background: rgb(252, 246, 192);
+  z-index: 1;
+}
+
+ul li:nth-child(3) {
+  background: rgb(195, 252, 195);
+  top: 105px;
+}
+
+ul li:hover {
+  transform: rotateY(-22deg) rotateX(7deg) scale(1.03);
+  transition: transform 0.4s ease-out;
+  z-index: 3;
+  mix-blend-mode: normal;
+}
+
+img {
+  width: 70px;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 0;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+.bg,
+.bg2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.bg {
+  -webkit-clip-path: polygon(68% 67%, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(68% 67%, 100% 0, 100% 100%, 0% 100%);
+  z-index: -1;
+  background-color: lightblue;
+}
+
+.bg2 {
+  z-index: -2;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% auto;
+  height: auto;
+  align-self: center;
+  margin: 0 50px;
+}
+
+#left > p {
+  color: rgb(192, 191, 191);
+  line-height: 1.2em;
+}
+
+@media (max-width: 768px) {
+  img {
+    width: 50px;
+  }
+  ul li p {
+    font-size: 12px;
+    padding-left: 7px;
+  }
+  ul li strong {
+    font-size: 15px;
+    padding-left: 7px;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  ul li:nth-child(1),
+  ul li:nth-child(2),
+  ul li:nth-child(3) {
+    height: 4.5em;
+  }
+}
+
+@media (max-width: 415px) {
+  img {
+    width: 30px;
+  }
+  ul li p {
+    font-size: 8px;
+    padding-left: 12px;
+  }
+  ul li strong {
+    font-size: 12px;
+    padding-left: 12px;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  ul li:nth-child(1),
+  ul li:nth-child(2),
+  ul li:nth-child(3) {
+    height: 4.5em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  #left > p {
+    font-size: 0.6em;
+  }
+}
